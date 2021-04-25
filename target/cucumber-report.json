@@ -1,0 +1,65 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "start_timestamp": "2021-04-25T03:38:15.287Z",
+        "line": 15,
+        "name": "Fazer login",
+        "description": "",
+        "id": "criar-conta;fazer-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4071085600,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "que eu esteja na pagina de login",
+            "match": {
+              "location": "loginsteps.LoginSteps.que_eu_esteja_na_pagina_de_login()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 7247601100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "preencho os dados",
+            "match": {
+              "location": "loginsteps.LoginSteps.preencho_os_dados()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2792398400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "vejo mensagem de sucesso",
+            "match": {
+              "location": "loginsteps.LoginSteps.vejo_mensagem_de_sucesso()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login"
+          }
+        ]
+      }
+    ],
+    "name": "Criar Conta",
+    "description": "eu como usuario quero criar minha conta para realizar compras",
+    "id": "criar-conta",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/OnlineShoppping.feature",
+    "tags": []
+  }
+]
