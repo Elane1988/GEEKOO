@@ -9,10 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "./src/test/resources/features/OnlineShoppping.feature",
 		glue = {""},
-		tags = "@Login",
+		tags = "@Registro",
 		monochrome = true,
 		dryRun = false,
-		plugin = {"pretty","json:target/cucumber-report.json"}
+		plugin = {"pretty","html:target/cucumber-report.html"}
 		
 		
 		)

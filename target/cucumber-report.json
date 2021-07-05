@@ -3,54 +3,60 @@
     "line": 3,
     "elements": [
       {
-        "start_timestamp": "2021-04-25T03:38:15.287Z",
-        "line": 15,
-        "name": "Fazer login",
+        "start_timestamp": "2021-05-10T13:21:19.862Z",
+        "line": 8,
+        "name": "Registro de usuario",
         "description": "",
-        "id": "criar-conta;fazer-login",
+        "id": "criar-conta;registro-de-usuario",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 4071085600,
+              "duration": 3506472900,
               "status": "passed"
             },
-            "line": 16,
-            "name": "que eu esteja na pagina de login",
+            "line": 9,
+            "name": "que eu esteja no formulario de abertura de conta \"http://advantageonlineshopping.com/#/ \\r\\n\"",
             "match": {
-              "location": "loginsteps.LoginSteps.que_eu_esteja_na_pagina_de_login()"
+              "arguments": [
+                {
+                  "val": "\"http://advantageonlineshopping.com/#/ \\r\\n\"",
+                  "offset": 49
+                }
+              ],
+              "location": "registroSteps.RegistroSteps.que_eu_esteja_no_formulario_de_abertura_de_conta(java.lang.String)"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 7247601100,
+              "duration": 5704509600,
               "status": "passed"
             },
-            "line": 17,
-            "name": "preencho os dados",
+            "line": 10,
+            "name": "preencher os dados obrigatorios",
             "match": {
-              "location": "loginsteps.LoginSteps.preencho_os_dados()"
+              "location": "registroSteps.RegistroSteps.preencher_os_dados_obrigatorios()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2792398400,
+              "duration": 559679600,
               "status": "passed"
             },
-            "line": 18,
-            "name": "vejo mensagem de sucesso",
+            "line": 11,
+            "name": "a conta sera gerada",
             "match": {
-              "location": "loginsteps.LoginSteps.vejo_mensagem_de_sucesso()"
+              "location": "registroSteps.RegistroSteps.a_conta_sera_gerada()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@Login"
+            "name": "@Registro"
           }
         ]
       }

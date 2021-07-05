@@ -1,0 +1,57 @@
+package datapickerSteps;
+
+import datapickerElementos.DataElementos;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import metodos.Metodos;
+
+public class DatapickerSteps {
+Metodos metodo = new Metodos();
+	DataElementos data = new DataElementos();
+	
+	
+	
+	@Given("eu esteja na pagina de datapicker {string}")
+	public void eu_esteja_na_pagina_de_datapicker(String data) {
+		metodo.abrirNavegador(data, "pagina Datapicker");
+
+	}
+
+	@When("insiro a data de nascimento no primeiro datapicker")
+	public void insiro_a_data_de_nascimento_no_primeiro_datapicker() {
+		metodo.clicar(data.datapicker1, "clicar em datapicker");
+		metodo.variosclicks(data.prev, 504, 2);
+		metodo.pausaTeste(1000);
+		metodo.linkTexto( "10");
+		
+
+	}
+
+	@When("insiro a data de nascimento no segundo datapicker")
+	public void insiro_a_data_de_nascimento_no_segundo_datapicker() {
+		metodo.clicar(data.Datepicker2, "click para sellecionar");
+		metodo.selecionar(data.dateAgosto, "August");
+		metodo.clicar(data.dateAno, "Selecionar 2011");
+		metodo.selecionar(data.dateAno, "2011");
+		metodo.clicar(data.dateAno, "Selecionar 2001");
+		metodo.selecionar(data.dateAno, "2001");
+		metodo.clicar(data.dateAno, "Selecionar 1991");
+		metodo.selecionar(data.dateAno, "1991");
+		metodo.clicar(data.dateAno, "Selecionar 1981");
+		metodo.selecionar(data.dateAno, "1981");
+		metodo.clicar(data.dateAno, "Selecionar 1979");
+		metodo.selecionar(data.dateAno, "1979");
+		metodo.linkTexto("10");
+		
+	}
+
+	@Then("valido as datas")
+	public void valido_as_datas() {
+		metodo.ScreenShot("Datepicker", "evidencia DatePicker");
+		metodo.pausaTeste(500);
+		metodo.fecharNavegador();
+		System.out.println("TESTE FINALIZADO COM SUCESSO");
+
+	}
+}

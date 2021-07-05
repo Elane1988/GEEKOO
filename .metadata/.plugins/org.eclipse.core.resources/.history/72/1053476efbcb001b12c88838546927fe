@@ -1,0 +1,173 @@
+package metodos;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class Metodos {
+
+	WebDriver driver;
+	
+	/**
+	 * @author ROQUE
+	 * Metodo abrir navegador
+	 * @param browser
+	 * @param descricao
+	 */
+	public void abrirNavegador(String browser, String descricao) {
+		try {
+
+				System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+				driver = new ChromeDriver();
+				driver.get(browser);
+				driver.manage().window().maximize();
+
+			
+		} catch (Exception e) {
+			System.out.println("#####-----error-----##### ao abrir browser " + e.getMessage());
+		}
+	}
+	public void pausaTeste(int tempo) {
+		try {
+			Thread.sleep(tempo);
+		} catch (InterruptedException e) {
+			System.out.println("#####-----error-----##### ao pausar teste " + e.getMessage());
+		}
+	}
+	/**
+	 * @author ROQUE
+	 * Metodo clicar no elemento
+	 * @param elemento
+	 * @param descricao
+	 */
+	public void clicar(By elemento, String descricao) {
+		try {
+			driver.findElement(elemento).click();
+		} catch (Exception e) {
+			System.out.println("#####-----error-----##### ao clicar no elemento " + e.getMessage());
+		}
+
+	}
+	public void variosclicks(By elemento,int n1, int n2) {
+		try {
+		
+		while(n1 >n2) {
+			driver.findElement(elemento).click();
+			n2++;
+		}
+		}catch (Exception e) {
+			System.out.println("#####-----error-----##### ao clicar no elemento " + e.getMessage());
+		}
+		}
+		
+		
+	
+	/**
+	 * @author ROQUE
+	 * Metodo escrever no elemento
+	 * @param elemento
+	 * @param texto
+	 */
+	public void escrever(By elemento, String texto) {
+		try{
+		driver.findElement(elemento).sendKeys(texto);
+		}catch (Exception e) {
+			System.out.println("#####-----error-----##### ao escrever " + e.getMessage());
+		}
+	}
+	/**
+	 * @author ROQUE
+	 * Metodo selecionar texto no combobox
+	 * @param elemento
+	 * @param texto
+	 */
+	public void selecionar(By elemento, String texto) {
+		try {
+		WebElement element = driver.findElement(elemento);
+		Select element1 = new Select(element);
+		element1.selectByVisibleText(texto);
+		}catch (Exception e) {
+			System.out.println("#####-----error-----##### ao selecionar elemento" +e.getMessage());
+		}
+	}
+	public void linkTexto(String texto) {
+		try {
+			
+			driver.findElement(By.linkText(texto)).click();
+		} catch (Exception e) {
+			System.out.println("#####-----error-----##### ao selecionar elemento" +e.getMessage());
+		}
+		
+	}
+/**
+ * @author ROQUE
+ * Metodo mover slide
+ * @param elemento
+ * @param texto
+ */
+public void mover(By elemento, int NH,int NV) {
+	try {
+	WebElement move = driver.findElement(elemento);
+	Actions slide = new Actions(driver);
+	slide.dragAndDropBy(move, NH, NV).build().perform();
+	}catch (Exception e) {
+		System.out.println("#####-----error ao mover objeto" +e.getMessage());
+	}
+}
+/**
+ * @author ROQUE
+ * Metodo selecionar frame
+ * @param elemento
+ */
+public void frame(int numero) {
+	try {
+		
+		driver.switchTo().frame(numero);
+	} catch (Exception e) {
+		System.out.println("#####-----error ao clicar no frame" +e.getMessage());
+	}
+	
+}
+	/**
+	 * @author ROQUE
+	 * Metodo tirar foto evidencia
+	 * @param foto
+	 * @param descricao
+	 */
+	public void ScreenShot(String foto, String descricao) {
+		try {
+			
+		TakesScreenshot scrshot = ((TakesScreenshot)driver);
+		File scrfile = scrshot.getScreenshotAs(OutputType.FILE);
+		File destfile = new File("./src/Evidencias/" +foto+ ".png");
+		FileUtils.copyFile(scrfile, destfile);
+		
+		} catch (IOException e) {
+			System.out.println("#####-----error ao tirar foto evidencia" +e.getMessage());
+		}
+	}
+	
+	/**
+	 * @author ROQUE
+	 * Metodo fechar navegdor
+	 */
+	public void fecharNavegador() {
+		try {
+			driver.quit();
+		} catch (Exception e) {
+			System.out.println("#####-----error-----##### ao fechar navegador");
+		}
+	}
+	
+	
+	
+}
