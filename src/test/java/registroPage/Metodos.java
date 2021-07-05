@@ -80,6 +80,7 @@ public void esperarElemento(By elemento, String descricao) {
 	WebDriverWait wait = new WebDriverWait(driver, 5);
 	@SuppressWarnings("unused")
 	WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(elemento));
+	driver.findElement(elemento).click();
 	}catch (Exception e) {
 		System.out.println("******error no passo"+descricao+""+e);
 	}

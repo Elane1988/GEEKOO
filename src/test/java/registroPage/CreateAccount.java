@@ -27,10 +27,10 @@ public class CreateAccount extends Metodos {
 
 	String usuario;
 public void menuUser() {
-	metodo.esperarElemento(this.user, "esperando o botão user ficar acessível");
-	metodo.clicar(user, "clicar em Menu User");
-	metodo.esperarElemento(createAccount, "esperar ser clicável o elemento");
-	metodo.clicar(createAccount, "clicar no elemento criar conta");
+	metodo.esperarElemento(this.user, "esperando o botï¿½o user ficar acessï¿½vel");
+	metodo.esperarElemento(createAccount, "clicar em criar novo usuario");
+	metodo.pausa(1000, "pausar o teste 1 segundo");
+	metodo.esperarElemento(createAccount, "clicar no elemento criar conta");
 }
 	public void criarConta(String username, String email, String password, String confirmPassword, String firstName,
 			String lastName, String phoneNumber, String country, String city, String adress, String province,
@@ -50,6 +50,7 @@ public void menuUser() {
 		metodo.escrever(this.postalCode, postalCode, "");
 		metodo.clicar(concordo, "");
 		metodo.clicar(register, "");
+		metodo.pausa(1000, "esperr 1 segundo para fechar o teste");
 
 	}
 }

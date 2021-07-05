@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "./src/test/resources/features/OnlineShoppping.feature",
 		glue = {""},
-		tags = "@Registro",
+		tags = "@DESAFIO_RSI",
 		monochrome = true,
 		dryRun = false,
 		plugin = {"pretty","html:target/cucumber-report.html"}

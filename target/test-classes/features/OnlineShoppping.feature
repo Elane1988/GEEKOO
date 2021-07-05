@@ -1,5 +1,5 @@
 #Author: rsppnet@hotmail.com
-
+@DESAFIO_RSI
 Feature: Criar Conta
 eu como usuario quero criar minha conta para realizar compras
 

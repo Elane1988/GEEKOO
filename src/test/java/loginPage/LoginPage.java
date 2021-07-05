@@ -28,8 +28,8 @@ public class LoginPage extends LoginElement {
 		Thread.sleep(4000);
 		driver.findElement(getReglogin()).click();
 		Thread.sleep(1000);
-		driver.findElement(getUsuario()).sendKeys("rsppnet");
-		driver.findElement(getSenha()).sendKeys("Jnrp@98796584");
+		driver.findElement(getUsuario()).sendKeys("chimull@r.com");
+		driver.findElement(getSenha()).sendKeys("T@e2e1010");
 		driver.findElement(getLembreMe()).click();
 		Thread.sleep(1000);
 		driver.findElement(getSignin()).click();

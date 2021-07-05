@@ -19,7 +19,7 @@ create.navegador("http://advantageonlineshopping.com/", "ChROME",
 	@When("preencher os dados obrigatorios")
 	public void preencher_os_dados_obrigatorios() throws InterruptedException {
 		create.menuUser();
-	  create.criarConta("roque", "chimull@r.com", "R@e2e1010", "R@e2e1010", "Roque", "chimull", "11996420062", "Brazil", "Cotia", "rua 123", "SP", "06720-000");
+	  create.criarConta("roque", "chimull@r.com", "T@e2e1010", "R@e2e1010", "Roque", "chimull", "11996420062", "Brazil", "Cotia", "rua 123", "SP", "06720-000");
 	}
 
 	@Then("a conta sera gerada")
